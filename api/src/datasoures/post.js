@@ -49,12 +49,11 @@ class PostAPI extends DataSource {
       return { id: -1 };
     }
 
-    const result = await this.store.posts.update(post, { where: { id: post.id } });
+    const result = await this.store.posts.findByPk(post.id);
 
-    if (result && result.length) {
-      const post = await this.store.posts.findByPk(result[0]);
-
-      return post ? post.dataValues : {};
+    if (result) {
+      const updatedPost = await result.update(post);
+      return updatedPost ? updatedPost.dataValues : {};
     }
     else {
       return { id: -1 };
