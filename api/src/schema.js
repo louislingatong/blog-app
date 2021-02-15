@@ -15,6 +15,10 @@ const typeDefs = gql`
     createdAt: String
     comments: [Comment]
   }
+  
+  type Subscription {
+    newComment: Comment!
+  }
 
   type Comment {
     """
@@ -25,7 +29,7 @@ const typeDefs = gql`
     content: String!
     createdAt: String
   }
-
+  
   input PostInput {
     """
     Post id for update
@@ -43,7 +47,7 @@ const typeDefs = gql`
     limit: Int
     offset: Int
   }
-
+  
   type Query {
     post(id: Int): Post
     posts(pagination: Pagination): [Post]!

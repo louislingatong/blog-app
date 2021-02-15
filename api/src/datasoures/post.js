@@ -1,4 +1,4 @@
-const { DataSource } = require('apollo-datasource');
+const {DataSource} = require('apollo-datasource');
 
 class PostAPI extends DataSource {
   constructor({ store }) {
@@ -76,7 +76,7 @@ class PostAPI extends DataSource {
 
     if (result) {
       const comment = await this.store.comments.findByPk(result.id);
-
+      this.context.pubsub.publish('NEW_COMMENT', {newComment: comment.dataValues});
       return comment ? comment.dataValues : {};
     }
     else {

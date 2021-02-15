@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import PropTypes from 'prop-types';
-import {useMutation} from '@apollo/client';
+import {useMutation, useSubscription} from '@apollo/client';
 import {CREATE_COMMENT} from '../graphql/Mutations';
+import {COMMENT_SUBSCRIPTION} from '../graphql/Subscriptions';
 import {useParams} from 'react-router-dom';
 import {useForm} from 'react-hook-form';
 import {fetchArticle, setArticleData} from '../modules/article/articleSlice';
@@ -20,25 +21,26 @@ function Comment(props) {
   const article = useSelector(fetchArticle)
   const {register, errors, handleSubmit, setValue, reset} = useForm();
   const [comments, setComments] = useState([]);
-  const [createComment, {data, loading}] = useMutation(CREATE_COMMENT);
+  const subscriptionResult = useSubscription(COMMENT_SUBSCRIPTION);
+  const [createComment, mutationResult] = useMutation(CREATE_COMMENT);
 
   useEffect(() => {
     setComments(props.comments);
   }, [props.comments])
 
   useEffect(() => {
-    if (data) {
+    if (subscriptionResult.data) {
       setComments((prevState => {
         const state = prevState.slice();
-        state.push(data.addComment);
+        state.push(subscriptionResult.data.newComment);
         return state;
       }));
 
       let newArticle = Object.assign({}, article);
-      newArticle.comments = newArticle.comments.concat(data.addComment);
+      newArticle.comments = newArticle.comments.concat(subscriptionResult.data.newComment);
       dispatch(setArticleData(newArticle));
     }
-  }, [data]);
+  }, [subscriptionResult.data]);
 
   const handleOnChange = (e) => {
     e.preventDefault();
@@ -75,7 +77,7 @@ function Comment(props) {
 
   return (
     <React.Fragment>
-      {loading && <Loader type="circular"/>}
+      {subscriptionResult.loading && mutationResult.loading && <Loader type="circular"/>}
       <div className="comment-title">{props.title.toUpperCase() || 'COMMENTS'}</div>
       {
         _.orderBy(comments, ['createdAt'], ['asc']).map((comment, i) => (

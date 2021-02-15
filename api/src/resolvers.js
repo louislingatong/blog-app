@@ -28,5 +28,10 @@ module.exports = {
     comments: (post, _, { dataSources }) => {
       return dataSources.postAPI.getComments(post.id);
     }
+  },
+  Subscription: {
+    newComment: {
+      subscribe: (_, __, { pubsub }) => pubsub.asyncIterator('NEW_COMMENT')
+    }
   }
 };
