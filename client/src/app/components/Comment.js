@@ -69,6 +69,8 @@ function Comment(props) {
     } else if (diff.getUTCMonth()) {
       return diff.getUTCMonth() + ' months(s) ago';
     } else if (diff.getUTCDate() === 1) {
+      return 'today';
+    } else if (diff.getUTCDate() === 2) {
       return 'yesterday';
     } else {
       return diff.getUTCDate() + ' day(s) ago';
