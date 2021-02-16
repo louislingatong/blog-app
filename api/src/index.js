@@ -13,9 +13,13 @@ const dataSources = () => ({
   userAPI: new UserAPI({ store })
 });
 
-const context = async ({req}) => {
-  const token = (req.headers && req.headers.authorization) || '';
-
+const context = async (context) => {
+  let token;
+  if (context.req) {
+    token = (context.req.headers && context.req.headers.authorization) || '';
+  } else {
+    token = (context.headers && context.headers.authorization) || '';
+  }
   const result = await store.users.findOne({ where: { token } });
   const user = result ? result.dataValues : null;
 
@@ -27,7 +31,15 @@ const pubsub = new PubSub();
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  subscriptions: { path: '/' },
+  subscriptions: {
+    path: '/',
+    onConnect: (connectionParams, webSocket, { request }) => {
+      console.log('Client connected');
+    },
+    onDisconnect: (webSocket, context) => {
+      console.log('Client disconnected')
+    },
+  },
   dataSources,
   context,
 });
