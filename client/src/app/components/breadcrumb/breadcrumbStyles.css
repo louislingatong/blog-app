@@ -1,0 +1,7 @@
+.from-state {
+    cursor: pointer;
+}
+
+.from-state:hover {
+    text-decoration: underline;
+}

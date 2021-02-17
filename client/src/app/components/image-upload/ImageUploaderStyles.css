@@ -1,0 +1,14 @@
+.drag-n-drop-zone {
+    width: 100%;
+    height: 540px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    margin: 20px 0px;
+}
+
+.drag-n-drop-zone.overlay {
+    background-color: #d6d6d6;
+}

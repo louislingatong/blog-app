@@ -1,0 +1,107 @@
+.carousel-outer-wrapper {
+    width: 100%;
+    height: 667px;
+    background-color: white;
+}
+
+.carousel-inner-wrapper {
+    height: 100%;
+    width: 100%;
+    opacity: 0.9;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+}
+
+.left-content {
+    flex: 7%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
+}
+
+.center-content {
+    flex: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-content {
+    flex: 7%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(0, 0, 0, 0.5));
+}
+
+.left-content span {
+    width: 50px;
+    height: 50px;
+    color: inherit;
+    font-weight: bold;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-content span {
+    width: 50px;
+    height: 50px;
+    color: inherit;
+    font-weight: bold;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-content .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    flex-grow: 1;
+}
+
+.content-container .title {
+    font-size: 60px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    padding: 0px 16px 5px 16px;
+}
+
+.content-container .date {
+    font-size: 28px;
+    padding: 10px 0;
+}
+
+.indicator-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-self: flex-end;
+}
+
+.indicator {
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    align-self: flex-end;
+    margin: 0px 5px 50px 5px;
+    cursor: pointer;
+}
+
+.indicator.active {
+    background-color: black;
+}

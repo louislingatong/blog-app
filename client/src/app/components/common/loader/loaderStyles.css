@@ -1,0 +1,99 @@
+.loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+}
+
+.loading,.loading.linear {
+    height: 3px;
+    width: 100%;
+    background-color: #292929;
+    -webkit-animation: linear-loading 1s infinite;
+    -moz-animation: linear-loading 1s infinite;
+    -o-animation: linear-loading 1s infinite;
+    animation: linear-loading 1s infinite;
+}
+
+@-webkit-keyframes linear-loading {
+    0%   {width: 100%}
+    25%  {width: 25%}
+    50%  {width: 50%}
+    75%  {width: 75%}
+    100% {width: 100%}
+}
+
+@-moz-keyframes linear-loading {
+    0%   {width: 100%}
+    25%  {width: 25%}
+    50%  {width: 50%}
+    75%  {width: 75%}
+    100% {width: 100%}
+}
+
+@-o-keyframes linear-loading {
+    0%   {width: 100%}
+    25%  {width: 25%}
+    50%  {width: 50%}
+    75%  {width: 75%}
+    100% {width: 100%}
+}
+
+@keyframes linear-loading {
+    0%   {width: 100%}
+    25%  {width: 25%}
+    50%  {width: 50%}
+    75%  {width: 75%}
+    100% {width: 100%}
+}
+
+.loading.circular {
+    align-self: center;
+    margin: auto;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    -webkit-animation: circular-loading 1s infinite;
+    -moz-animation: circular-loading 1s infinite;
+    -o-animation: circular-loading 1s infinite;
+    animation: circular-loading 1s infinite;
+}
+
+@-webkit-keyframes circular-loading {
+    0%   {border-top: 5px solid #292929;}
+    25%  {border: 0 none #292929;  border-top: 5px solid #292929;}
+    50%  {border: 0 none #292929; border-right: 5px solid #292929; }
+    75%  {border: 0 none #292929; border-bottom: 5px solid #292929;}
+    100% {border: 0 none #292929; border-left: 5px solid #292929;}
+}
+
+@-moz-keyframes circular-loading {
+    0%   {border-top: 5px solid #292929;}
+    25%  {border: 0 none #292929;  border-top: 5px solid #292929;}
+    50%  {border: 0 none #292929; border-right: 5px solid #292929; }
+    75%  {border: 0 none #292929; border-bottom: 5px solid #292929;}
+    100% {border: 0 none #292929; border-left: 5px solid #292929;}
+}
+
+@-o-keyframes circular-loading {
+    0%   {border-top: 5px solid #292929;}
+    25%  {border: 0 none #292929;  border-top: 5px solid #292929;}
+    50%  {border: 0 none #292929; border-right: 5px solid #292929; }
+    75%  {border: 0 none #292929; border-bottom: 5px solid #292929;}
+    100% {border: 0 none #292929; border-left: 5px solid #292929;}
+}
+
+@keyframes circular-loading {
+    0%   {border-top: 5px solid #292929;}
+    25%  {border: 0 none #292929;  border-top: 5px solid #292929;}
+    50%  {border: 0 none #292929; border-right: 5px solid #292929; }
+    75%  {border: 0 none #292929; border-bottom: 5px solid #292929;}
+    100% {border: 0 none #292929; border-left: 5px solid #292929;}
+}

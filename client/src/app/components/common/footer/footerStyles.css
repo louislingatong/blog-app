@@ -1,0 +1,33 @@
+.footer-wrapper {
+    background-color: #292929;
+    color: white;
+    height: 362px;
+    margin-top: 160px;
+}
+
+.footer-wrapper .content-container {
+    font-family: "Yu Gothic";
+    font-size: 16px;
+    height: 274px;
+    max-width: 1115px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-container .logo-container {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.footer-wrapper > label {
+    font-size: 16px;
+    color: white;
+    background-color: #101010;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

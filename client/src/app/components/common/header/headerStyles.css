@@ -1,0 +1,36 @@
+.header-outer-wrapper {
+    height: 100px;
+    width: 100%;
+}
+
+.header-outer-wrapper.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    z-index: 1;
+}
+
+.header-inner-wrapper {
+    height: 100px;
+    max-width: 1366px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.header-inner-wrapper .logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 116px;
+}
+
+.action {
+    font-weight: bold;
+    font-size: 20px;
+    margin-right: 116px;
+    cursor: pointer;
+}
