@@ -1,10 +1,13 @@
 import React from 'react';
+import lightLogo from '../../../LightLogo.png';
 
 function Footer() {
   return (
     <div className="footer-wrapper">
       <div className="content">
-        <div className="app-name">BLOG</div>
+        <div className="app-name">
+          <img src={lightLogo} className="App-logo" alt="logo" />
+        </div>
         <div>LOUIS C. LINGATONG</div>
         <div>Senior Software Engineer</div>
       </div>

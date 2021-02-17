@@ -80,12 +80,12 @@ function Comment(props) {
   return (
     <React.Fragment>
       {subscriptionResult.loading && mutationResult.loading && <Loader type="circular"/>}
-      <div className="comment-title">{props.title.toUpperCase() || 'COMMENTS'}</div>
+      <div className="title">{props.title.toUpperCase() || 'COMMENTS'}</div>
       {
         _.orderBy(comments, ['createdAt'], ['asc']).map((comment, i) => (
           <div className="comment-container" key={i}>
             <p>{comment.content}</p>
-            <strong><small>{dateCreated(comment.createdAt)}</small></strong>
+            <small>{dateCreated(comment.createdAt)}</small>
           </div>
         ))
       }

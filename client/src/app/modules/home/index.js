@@ -9,7 +9,7 @@ function Home() {
   return (
     <React.Fragment>
       <Carousel/>
-      <div style={{maxWidth: '1115px', margin: 'auto', marginTop: '92px'}}>
+      <div style={{maxWidth: '1120px', margin: 'auto', marginTop: '100px'}}>
         <Article title="ARTICLES" enableCreateItem={isAuthenticated} createPath={'/add-article'}
                  viewPath={'/view-article'}
                  enableLoadMore={true}/>

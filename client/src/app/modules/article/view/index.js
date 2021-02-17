@@ -45,17 +45,16 @@ function ViewArticle() {
           <Link to={{
             pathname: `/edit-article/${parseInt(params.id)}`,
             state: {from: {path: history.location.pathname, params}}
-          }}>Edit
-            Post</Link>}
+          }}>Edit Article</Link>}
         </div>
-        <p>
+        <p className="date">
           {article.createdAt && moment(article.createdAt).format('YYYY.MM.DD')}
         </p>
-        <h1>
+        <h1 className="title">
           {article.title}
         </h1>
         {article.image && <div className="article-image" style={{backgroundImage: `url(${article.image})`}}/>}
-        <p>
+        <p className="content">
           {article.content}
         </p>
         <div className="comment-wrapper">

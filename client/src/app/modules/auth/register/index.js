@@ -6,10 +6,9 @@ import '../auth.css';
 function Login() {
   return (
     <React.Fragment>
-      <div className="page-title">Register</div>
       <Form/>
-      <div style={{maxWidth: '1115px', margin: 'auto', marginTop: '92px'}}>
-        <Article title="NEWS" viewPath={'/view-article'}
+      <div style={{maxWidth: '1115px', margin: 'auto', marginTop: '258px'}}>
+        <Article title="ARTICLES" viewPath={'/view-article'}
                  enableLoadMore={true}/>
       </div>
     </React.Fragment>

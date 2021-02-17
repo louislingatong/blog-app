@@ -1,26 +1,28 @@
 .page-wrapper {
+    font-size: 18px;
     max-width: 1115px;
     margin: auto;
-    font-size: 20px;
 }
 
 .page-wrapper .error-message {
     color: red;
-    font-size: small !important;
+    font-size: small;
 }
 
 .breadcrumb-wrapper {
-    padding: 30px 120px;
+    font-family: "Yu Gothic";
+    font-size: 16px;
+    padding: 26px 120px;
     background-color: whitesmoke;
-    font-size: 20px;
 }
 
 .top-action {
     text-align: right;
-    margin: 80px auto 30px auto;
+    margin: 64px auto 36px auto;
 }
 
 .top-action a {
+    font-size: 20px;
     font-weight: bold;
     text-decoration: underline;
     margin-left: 50px;
@@ -41,10 +43,15 @@
     border-top: 1px solid black;
 }
 
-.comment-wrapper .comment-title {
-    font-size: 60px;
-    font-weight: bolder;
-    margin-top: 50px;
+.comment-wrapper .date {
+    font-size: 20px;
+}
+
+.comment-wrapper .title {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 65px;
+    margin-bottom: 35px;
 }
 
 .comment-wrapper .comment-container {
@@ -53,6 +60,15 @@
     margin-bottom: 50px;
 }
 
+.comment-wrapper .comment-container p {
+    font-size: 18px;
+}
+
 .comment-wrapper .comment-container small {
-    font-size: small;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.comment-wrapper form textarea {
+    margin-bottom: 35px;
 }

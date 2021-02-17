@@ -1,8 +1,8 @@
 import React from 'react';
 
-function PrivateLayout({children}) {
+function PrivateLayout({fixedHeader, children}) {
   return (
-    <div style={{minHeight: '100vh'}}>
+    <div className={fixedHeader ? 'layout-wrapper fixed' : 'layout-wrapper'}>
       {children}
     </div>
   );

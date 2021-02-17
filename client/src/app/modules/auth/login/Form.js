@@ -42,9 +42,14 @@ function Form() {
     });
   };
 
+  const goToRegister = () => {
+    history.push('/register')
+  };
+
   return (
     <div className="form-wrapper">
       {loading && <Loader type="circular"/>}
+      <div className="title">LOGIN</div>
       <form onSubmit={handleSubmit(onLogin)} noValidate>
         <div className="form-item">
           <label>Email</label>
@@ -76,8 +81,9 @@ function Form() {
         </div>
         <button type="submit" disabled={loading}>LOGIN</button>
       </form>
-      <div>
-        <label>No account yet?</label><strong><Link to={'/register'}>REGISTER HERE</Link></strong>
+      <div className="confirmation">
+        <label className="message">No account yet?</label>
+        <a className="link" onClick={goToRegister}>REGISTER HERE</a>
       </div>
     </div>
   );

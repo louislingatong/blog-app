@@ -103,7 +103,7 @@ function Form(props) {
         <a onClick={handleSubmit(onSave)} disabled={loading}>Save Article</a>
         <a onClick={handleCancel} disabled={loading}>Cancel</a>
       </div>
-      {article.createdAt && moment(article.createdAt).format('YYYY.MM.DD')}
+      <p className="date">{article.createdAt && moment(article.createdAt).format('YYYY.MM.DD')}</p>
       <textarea id="title" name="title" defaultValue={article.title} key={article.title}
                 className={errors.title && 'invalid-field'}
                 ref={
