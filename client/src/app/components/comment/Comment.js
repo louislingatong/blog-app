@@ -59,21 +59,20 @@ function Comment(props) {
   };
 
   const dateCreated = (createdAt) => {
-    // Api response return incorrect createdAt of comment
     const dateCreated = new Date(createdAt);
     const dateToday = new Date();
     const diff = new Date(dateToday.getTime() - dateCreated.getTime());
 
     if (diff.getUTCFullYear() - 1970) {
-      return (diff.getUTCFullYear() - 1970) + ' year(s) ago';
+      return (diff.getUTCFullYear() - 1970) + ' years ago';
     } else if (diff.getUTCMonth()) {
-      return diff.getUTCMonth() + ' months(s) ago';
-    } else if (diff.getUTCDate() === 1) {
+      return diff.getUTCMonth() + ' months ago';
+    } else if (dateCreated.toDateString() === dateToday.toDateString()) {
       return 'today';
-    } else if (diff.getUTCDate() === 2) {
+    } else if (diff.getUTCDate() === 1) {
       return 'yesterday';
     } else {
-      return diff.getUTCDate() + ' day(s) ago';
+      return diff.getUTCDate() + ' days ago';
     }
   };
 
